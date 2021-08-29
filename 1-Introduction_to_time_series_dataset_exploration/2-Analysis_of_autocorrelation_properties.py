@@ -16,7 +16,7 @@ import seaborn as sns
 plt.style.use('dark_background')
 
 # load the dataset
-df = pd.read_csv("data/AirPassengers.csv")
+df = pd.read_csv("./../data/AirPassengers.csv")
 print(df.dtypes)
 
 df['Month'] = pd.to_datetime(df['Month'])

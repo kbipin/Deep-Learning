@@ -16,7 +16,7 @@ import seaborn as sns
 plt.style.use('dark_background')
 
 # load the dataset
-df = pd.read_csv("data/AirPassengers.csv")
+df = pd.read_csv("./../data/AirPassengers.csv")
 print(df.dtypes)
 
 df['Month'] = pd.to_datetime(df['Month'])
@@ -72,20 +72,3 @@ plt.plot(residual, label='Residual', color='yellow')
 plt.legend(loc='upper left')
 plt.show()
 
-
-#AUTOCORRELATION
-#Autocorrelation is simply the correlation of a series with its own lags.
-# Plot lag on x axis and correlation on y axis
-#Any correlation above confidence lnes are statistically significant.
-
-from statsmodels.tsa.stattools import acf
-
-acf_144 = acf(df.Passengers, nlags=144)
-plt.plot(acf_144)
-
-#Obtain the same but with single line and more info...
-from pandas.plotting import autocorrelation_plot
-autocorrelation_plot(df.Passengers) 
-#Horizontal bands indicate 95% and 99% (dashed) confidence bands
-
-#A strong positive correlation for lags below 40 (months)

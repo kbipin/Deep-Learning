@@ -1,2 +1,2 @@
-# Deep-Learning-CookBook
+# Deep-Learning-Recipies
 Deep Learing Recipies
